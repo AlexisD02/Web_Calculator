@@ -18,14 +18,23 @@
       <a href="#">Date Calculation</a>
     </div>
 
-    <span class="menu_bar_button" onclick="openNav()">
+    <span id="menu_button" class="menu_bar_button" onclick="openNav()">
         <i class="fas fa-bars"></i>
     </span>
 
+    <button class="bin-btn" onclick="deleteHistory()">
+        <i class="fas fa-trash-alt"></i>
+    </button>
+
     <button class="history-btn" onclick="showHistory()">
-      <i class="fas fa-history"></i>
+        <i class="fas fa-history"></i>
     </button>
     <ul id="history"></ul>
+
+    <!-- HTML for the button or toggle switch -->
+    <button id="theme-toggle" onclick="themeToggle(this)">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <form name="calc" id="calc" class="main_container">
       <input name="display" id="display" type="text" disabled value="0">
@@ -93,6 +102,7 @@
       </div>
     </form>
 
+    <script src="js/themes.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/history.js"></script>
 

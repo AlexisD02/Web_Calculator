@@ -49,6 +49,7 @@ window.onload = function () {
                 backspace(calculator);
                 break;
             case 'Escape':
+            case 'c':
                 // Clear the display
                 calculator.display.value = '0';
                 break;
@@ -99,6 +100,7 @@ function calculate(calc) {
                 result: result
             });
             calc.display.value = result.toString();
+            localStorage.setItem('history', JSON.stringify(history));
         }
     } catch (err) {
         alert(err.message);
