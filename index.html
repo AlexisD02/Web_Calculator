@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/style_index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js"></script>
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="#" class="closeBtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Standard</a>
+        <a href="scientific_calculator.html">Scientific</a>
+        <a href="#">Programmer</a>
+        <a href="#">Date Calculation</a>
+    </div>
+
+    <span class="menu_bar_button" onclick="openNav()">&#9776;</span>
+
+    <form name="calc" id="calc" class="main_container">
+        <input name="display" id="display" type="text" disabled value="0">
+        <div class="buttons_container">
+            <div class="row">
+                <button onclick="handleValue(event, this.form, 'C')" class="button clearButton">C</button>
+                <button onclick="event.preventDefault(); backspace(this.form)" class="button deleteButton">DEL</button>
+                <button onclick="handleValue(event, this.form, '%')" class="button rightOperatorButton">%</button>
+                <button onclick="handleValue(event, this.form, '/')" class="button rightOperatorButton">÷</button>
+            </div>
+            <div class="row">
+                <button onclick="handleValue(event, this.form, '7')" class="button">7</button>
+                <button onclick="handleValue(event, this.form, '8')" class="button">8</button>
+                <button onclick="handleValue(event, this.form, '9')" class="button">9</button>
+                <button onclick="handleValue(event, this.form, '*')" class="button rightOperatorButton">×</button>
+            </div>
+            <div class="row">
+                <button onclick="handleValue(event, this.form, '4')" class="button">4</button>
+                <button onclick="handleValue(event, this.form, '5')" class="button">5</button>
+                <button onclick="handleValue(event, this.form, '6')" class="button">6</button>
+                <button onclick="handleValue(event, this.form, '-')" class="button rightOperatorButton">-</button>
+            </div>
+            <div class="row">
+                <button onclick="handleValue(event, this.form, '1')" class="button">1</button>
+                <button onclick="handleValue(event, this.form, '2')" class="button">2</button>
+                <button onclick="handleValue(event, this.form, '3')" class="button">3</button>
+                <button onclick="handleValue(event, this.form, '+')" class="button rightOperatorButton">+</button>
+            </div>
+            <div class="row">
+                <button onclick="handleValue(event, this.form, '+/-')" class="button">+/-</button>
+                <button onclick="handleValue(event, this.form, '0')" class="button">0</button>
+                <button onclick="handleValue(event, this.form, '.')" class="button">.</button>
+                <button onclick="event.preventDefault(); calculate(this.form)" class="button rightOperatorButton">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/functions.js"></script>
+
+</body>
+</html>
