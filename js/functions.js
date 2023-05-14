@@ -21,8 +21,8 @@ function handleValue(event, calc, value) {
         calc.display.value = "";
     }
     if (value === '%') {
-        // Convert percentage to decimal and display the result
-        calc.display.value = (math.evaluate(calc.display.value + '/100')).toString();
+        // Convert percentage to decimal using Math.js library and display the result
+        calc.display.value = math.evaluate(calc.display.value + '/100').toString();
     }
     else if (value === '+/-') {
         // Invert the sign of the current number
@@ -76,37 +76,35 @@ function backspace(calc) {
     calc.display.value = calc.display.value.substring(0, size - 1);
 }
 
+let history = [];
+
 function calculate(calc) {
     let size, n, f;
     try {
         if (calc.display.value.includes("!")) {
-            // Factorial operation
-            size = calc.display.value.length;
-            n = Number(calc.display.value.substring(0, size - 1));
-            if (n < 0) {
-                throw new Error("Factorial of a negative number is undefined.");
-            }
-            f = 1;
-            for (let i = 2; i <= n; i++) {
-                f = f * i;
-                if (f === Infinity) {
-                    throw new Error("Result is too large to display.");
-                }
-            }
-            calc.display.value = f;
-        }
-        else {
-            // Other arithmetic operations
-            const result = new Function('return ' + calc.display.value)();
+            // Calculate factorial
+            // ...
+        } else if (calc.display.value.includes("%")) {
+            // Calculate percentage
+            // ...
+        } else {
+            // Evaluate and execute output
+            const result = math.evaluate(calc.display.value);
             if (isNaN(result)) {
                 throw new Error("Invalid input.");
             }
+            // Store calculation and result in history
+            history.push({
+                calculation: calc.display.value,
+                result: result
+            });
             calc.display.value = result.toString();
         }
     } catch (err) {
         alert(err.message);
     }
 }
+
 
 window.onerror = function (message, source, lineno, colno, error) {
     alert(error.message);

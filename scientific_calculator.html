@@ -6,6 +6,7 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="css/style_scientific.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 <body>
 
@@ -17,7 +18,14 @@
       <a href="#">Date Calculation</a>
     </div>
 
-    <span class="menu_bar_button" onclick="openNav()">&#9776;</span>
+    <span class="menu_bar_button" onclick="openNav()">
+        <i class="fas fa-bars"></i>
+    </span>
+
+    <button class="history-btn" onclick="showHistory()">
+      <i class="fas fa-history"></i>
+    </button>
+    <ul id="history"></ul>
 
     <form name="calc" id="calc" class="main_container">
       <input name="display" id="display" type="text" disabled value="0">
@@ -86,6 +94,7 @@
     </form>
 
     <script src="js/functions.js"></script>
+    <script src="js/history.js"></script>
 
 </body>
 </html>
