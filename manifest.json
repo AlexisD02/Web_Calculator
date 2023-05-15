@@ -1,0 +1,30 @@
+{
+  "name": "Calculator App",
+  "short_name": "Calculator",
+  "start_url": "https://alexisd02.github.io/Web_Calculator/",
+  "display": "standalone",
+  "theme_color": "#3f51b5",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "images/calculator_50.png",
+      "sizes": "50x50",
+      "type": "image/png"
+    },
+    {
+      "src": "images/calculator_72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "images/calculator_100.png",
+      "sizes": "100x100",
+      "type": "image/png"
+    },
+    {
+      "src": "images/calculator_144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
